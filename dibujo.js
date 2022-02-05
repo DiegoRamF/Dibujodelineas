@@ -1,3 +1,5 @@
+var elegircolor = document.getElementById("elegir_color");
+
 var text = document.getElementById("texto_lineas");
 var boton = document.getElementById("botoncito");
 boton.addEventListener("click", dibujoPorClick );
@@ -18,11 +20,10 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
 
 function dibujoPorClick()
 {
-    var x = parseInt(text.value);
-    var lineas = x;
+    var lineas = parseInt(text.value);
     var l = 0;
     var yi, xf;
-    var colorcito = "red";
+    var colorcito = elegircolor.value;
     var espacio = ancho / lineas;
 
     for (l = 0; l < lineas; l++) 
@@ -33,42 +34,45 @@ function dibujoPorClick()
         console.log("Linea " + l);
     }
 
-    dibujarLinea(colorcito, 0, 0, 0, 300)
-    dibujarLinea(colorcito, 0, 300, 300, 300)
+    dibujarLinea(colorcito, 0, 0, 0, 300);
+    dibujarLinea(colorcito, 0, 300, 300, 300);
 
-    colorcito = "blue"
+
+
     for (l = 0; l < lineas; l++)
     {
-        yi = espacio * (l + 1)
-        xf = espacio * l
-        dibujarLinea(colorcito, 300, yi, xf, 0)
-        console.log("linea" + l)
+        yi = espacio * (l + 1);
+        xf = espacio * l;
+        dibujarLinea(colorcito, 300, yi, xf, 0);
+        console.log("linea" + l);
     }
 
-    dibujarLinea(colorcito, 300, 300, 300, 0)
-    dibujarLinea(colorcito, 300, 0, 0, 0)
+    dibujarLinea(colorcito, 300, 300, 300, 0);
+    dibujarLinea(colorcito, 300, 0, 0, 0);
 
-    colorcito = "green"
+
+
     for (l = 0; l < lineas; l++)
     {
-        xi = 300 - (l * espacio)
-        yf = 10 + (l * espacio)
-        dibujarLinea(colorcito, xi, 0, 0, yf)
-        console.log("linea" + l)
+        xi = 300 - (espacio * l);
+        yf = 300 - (espacio * (lineas-(l+1)));
+        dibujarLinea(colorcito, xi, 0, 0, yf);
+        console.log("linea" + l);
     }
 
-    dibujarLinea(colorcito, 0, 300, 0, 0)
-    dibujarLinea(colorcito, 0, 0, 300, 0)
+    dibujarLinea(colorcito, 0, 300, 0, 0);
+    dibujarLinea(colorcito, 0, 0, 300, 0);
+    
 
-    colorcito = "yellow"
+
     for (l = 0; l < lineas; l++)
     {
-        xi = espacio * l
-        yf = 290 - (l * espacio)
-        dibujarLinea(colorcito, xi, 300, 300, yf)
-        console.log("linea" + l)
+        xi = espacio * l;
+        yf = espacio * (lineas - (l + 1));
+        dibujarLinea(colorcito, xi, 300, 300, yf);
+        console.log("linea" + l);
     }
 
-    dibujarLinea(colorcito, 300, 0, 300, 300)
-    dibujarLinea(colorcito, 300, 300, 0, 300)
+    dibujarLinea(colorcito, 300, 0, 300, 300);
+    dibujarLinea(colorcito, 300, 300, 0, 300);
 }

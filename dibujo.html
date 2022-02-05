@@ -6,16 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dibujando con las lineas</title>
 </head>
-<body>
+<style>
+    body
+    {
+        background-color: rgb(0, 0, 0);
+    }
+
+    h1
+    {
+        color: rgb(90, 184, 132);
+    }
+
+    p
+    {
+        font-family: monospace;
+        color: rgb(0, 255, 234);
+    }
     
-    <h1>Dibujo en canvas</h1>
+    strong
+    {
+        background-color: rgb(141, 53, 53);
+    }
+</style>
+<body>
+    <h1><strong>Dibujo en canvas</strong></h1>
     <p>
-        Cuantas lineas quieres
+        Cuantas lineas quieres: 
         <input type="text" id="texto_lineas" />
-        <input type="button" value="A darle!" id="botoncito"/>
+        <br/>
+        Escoge el color que quieras: 
+        <input type="color" id="elegir_color" />
+        <br/>
+        <input type="button" value="lanzar" id="botoncito"/>
     </p>
     <canvas width="300" height="300" id="dibujito"></canvas>
-    <p>Asi queda tu dibujo</p>
+    <p>Así queda tu dibujo</p>
     <script src="dibujo.js"></script>
 </body>
 </html>
